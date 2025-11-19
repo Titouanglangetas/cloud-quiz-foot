@@ -1,0 +1,7 @@
+[
+  {
+    "question": "Quel joueur a remporté le Ballon d'Or 2023 ?",
+    "answers": ["Messi", "Mbappé", "Haaland", "De Bruyne"],
+    "correct": "Messi"
+  }
+]
