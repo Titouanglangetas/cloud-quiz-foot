@@ -1,1 +1,2 @@
+console.log("Frontend loaded!");
 
