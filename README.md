@@ -135,7 +135,7 @@ Déclencheurs typiques :
 Les questions sont stockées dans : data/questions.json
 
 Format exemple :
-```json
+
 {
   "question": "Qui a gagné la Coupe du Monde 2018 ?",
   "answers": ["France", "Croatie", "Brésil", "Belgique"],
