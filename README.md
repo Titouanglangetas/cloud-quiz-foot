@@ -142,6 +142,7 @@ Format exemple :
   "correct": "France"
 }
 
+---
 ## 🚀 9. Installation locale
 1) Cloner le repo : git clone https://github.com/username/cloud-quiz-foot.git
 2) Installer Azure Functions Tools : npm install -g azure-functions-core-tools@4
@@ -150,7 +151,7 @@ Format exemple :
 
 4) Ouvrir le frontend dans un navigateur: frontend/index.html
 
-
+---
 ## 👥 10. Équipe
 Titouan Glangetas
 Arthur Fatus
