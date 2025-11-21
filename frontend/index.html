@@ -1,14 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Cloud Quiz Foot</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <title>Test de QI Foot ⚽🧠</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-    <h1>Cloud Quiz Foot</h1>
-    <button id="startBtn">Commencer le quiz</button>
 
-    <div id="quiz"></div>
-    <script src="script.js"></script>
+<body>
+
+  <!-- —— SIDEBAR (Classement) ————————————————————————————— -->
+  <aside id="sidebar">
+      <h2>Classement <span class="icon">🔝</span></h2>
+      <ul id="leaderboard-list"></ul>
+  </aside>
+
+  <!-- —— CONTENU PRINCIPAL ————————————————————— -->
+  <div class="main">
+
+    <!-- Header -->
+    <header class="header">
+      <h1>Test de QI FOOT <span class="emoji">⚽🧠</span></h1>
+      <p class="subtitle">
+        Réponds aux questions, progresse, et découvre ton vrai niveau de QI Foot.
+      </p>
+    </header>
+
+    <!-- ÉCRAN START -->
+    <section id="screen-start" class="screen active card big">
+      <h2>Ton QI Foot est-il digne d’un Ballon d’Or ?</h2>
+      <p>Réponds à 10 questions de foot. La difficulté s'adapte à tes résultats.</p>
+      <button id="btn-start" class="btn primary">Démarrer le quiz</button>
+    </section>
+
+    <!-- ÉCRAN QUIZ -->
+    <section id="screen-quiz" class="screen card big">
+      <div id="quiz-meta" class="meta">
+        <span id="question-counter"></span>
+        <span id="score-display"></span>
+      </div>
+
+      <h2 id="question-text" class="question-text"></h2>
+      <div id="choices" class="choices"></div>
+
+      <button id="btn-next" class="btn next" disabled>Question suivante ▶</button>
+    </section>
+
+    <!-- ÉCRAN FIN -->
+    <section id="screen-end" class="screen card big">
+      <h2>Test terminé 🎉</h2>
+
+      <p id="qi-foot-level" class="qi-foot"></p>
+      <p class="score-final">Ton QI Foot : <strong id="final-score"></strong></p>
+
+      <div class="save-box">
+        <label for="player-name">Entre ton pseudo pour enregistrer ton score :</label>
+        <input id="player-name" type="text" placeholder="Ex : titou10" />
+        <button id="btn-save-score" class="btn primary">Valider mon score</button>
+        <p id="save-status" class="status"></p>
+      </div>
+
+      <button id="btn-reload" class="btn secondary">Rejouer 🔁</button>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

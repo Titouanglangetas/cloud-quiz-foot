@@ -1,0 +1,484 @@
+[
+  { "PartitionKey": "Q", "RowKey": "1",  "difficulty": 1,  "question": "Quel pays a remporté la Coupe du Monde 2018 ?", "choice1": "France", "choice2": "Croatie", "choice3": "Belgique", "answer": "France" },
+  { "PartitionKey": "Q", "RowKey": "2",  "difficulty": 2,  "question": "Quel club a remporté la Ligue des Champions 2020 ?", "choice1": "Bayern Munich", "choice2": "PSG", "choice3": "Liverpool", "answer": "Bayern Munich" },
+  { "PartitionKey": "Q", "RowKey": "3",  "difficulty": 3,  "question": "Combien de Ballons d'Or Cristiano Ronaldo a-t-il gagnés ?", "choice1": "4", "choice2": "5", "choice3": "6", "answer": "5" },
+  { "PartitionKey": "Q", "RowKey": "4",  "difficulty": 3,  "question": "Quel club formateur de Kylian Mbappé ?", "choice1": "Lyon", "choice2": "AS Monaco", "choice3": "Rennes", "answer": "AS Monaco" },
+  { "PartitionKey": "Q", "RowKey": "5",  "difficulty": 4,  "question": "Quel pays détient le plus de Coupes du Monde ?", "choice1": "Brésil", "choice2": "Allemagne", "choice3": "Italie", "answer": "Brésil" },
+  { "PartitionKey": "Q", "RowKey": "6",  "difficulty": 2,  "question": "Quel joueur est surnommé 'La Pulga' ?", "choice1": "Messi", "choice2": "Aguero", "choice3": "Tevez", "answer": "Messi" },
+  { "PartitionKey": "Q", "RowKey": "7",  "difficulty": 5,  "question": "Qui est le meilleur buteur de l'histoire de la Ligue des Champions ?", "choice1": "Cristiano Ronaldo", "choice2": "Messi", "choice3": "Lewandowski", "answer": "Cristiano Ronaldo" },
+  { "PartitionKey": "Q", "RowKey": "8",  "difficulty": 5,  "question": "En quelle année la France a-t-elle gagné son premier Euro ?", "choice1": "1984", "choice2": "2000", "choice3": "1992", "answer": "1984" },
+  { "PartitionKey": "Q", "RowKey": "9",  "difficulty": 6,  "question": "Qui a gagné le Mondial 1998 en tant qu'entraîneur ?", "choice1": "Aimé Jacquet", "choice2": "Roger Lemerre", "choice3": "Michel Hidalgo", "answer": "Aimé Jacquet" },
+  { "PartitionKey": "Q", "RowKey": "10", "difficulty": 6,  "question": "Quel club est surnommé 'Les Reds' ?", "choice1": "Manchester United", "choice2": "Arsenal", "choice3": "Liverpool", "answer": "Liverpool" },
+
+  { "PartitionKey": "Q", "RowKey": "11", "difficulty": 7,  "question": "Quel joueur détient le record de buts en équipe de France ?", "choice1": "Henry", "choice2": "Giroud", "choice3": "Mbappé", "answer": "Giroud" },
+  { "PartitionKey": "Q", "RowKey": "12", "difficulty": 7,  "question": "Combien de Ligues des Champions le Real Madrid a-t-il ?", "choice1": "11", "choice2": "13", "choice3": "14", "answer": "14" },
+  { "PartitionKey": "Q", "RowKey": "13", "difficulty": 8,  "question": "Quel joueur a marqué la main de Dieu ?", "choice1": "Maradona", "choice2": "Pelé", "choice3": "Zico", "answer": "Maradona" },
+  { "PartitionKey": "Q", "RowKey": "14", "difficulty": 8,  "question": "Quel pays a terminé finaliste en 1974 et 1978 sans jamais gagner ?", "choice1": "Pays-Bas", "choice2": "Hongrie", "choice3": "Tchécoslovaquie", "answer": "Pays-Bas" },
+  { "PartitionKey": "Q", "RowKey": "15", "difficulty": 9,  "question": "Combien de buts a marqué Just Fontaine en Coupe du Monde 1958 ?", "choice1": "9", "choice2": "13", "choice3": "16", "answer": "13" },
+  { "PartitionKey": "Q", "RowKey": "16", "difficulty": 6,  "question": "Quel club français a atteint la finale de C1 en 2004 ?", "choice1": "Monaco", "choice2": "Lyon", "choice3": "PSG", "answer": "Monaco" },
+
+  { "PartitionKey": "Q", "RowKey": "17", "difficulty": 4, "question": "Qui est le gardien du Paraguay célèbre pour ses coups francs ?", "choice1": "Chilavert", "choice2": "Higuita", "choice3": "Campos", "answer": "Chilavert" },
+  { "PartitionKey": "Q", "RowKey": "18", "difficulty": 6, "question": "Qui a inscrit la Panenka originale en 1976 ?", "choice1": "Panenka", "choice2": "Cruyff", "choice3": "Beckenbauer", "answer": "Panenka" },
+  { "PartitionKey": "Q", "RowKey": "19", "difficulty": 7, "question": "Dans quel club Ibrahimovic n’a-t-il jamais joué ?", "choice1": "Real Madrid", "choice2": "Barcelone", "choice3": "PSG", "answer": "Real Madrid" },
+  { "PartitionKey": "Q", "RowKey": "20", "difficulty": 8, "question": "Quel club a remporté la première Ligue des Champions (nouveau format) ?", "choice1": "Milan AC", "choice2": "OM", "choice3": "Ajax", "answer": "OM" },
+
+  { "PartitionKey": "Q", "RowKey": "21", "difficulty": 9, "question": "Quel est le seul joueur à avoir marqué dans 5 Coupes du Monde ?", "choice1": "Pelé", "choice2": "Messi", "choice3": "Cristiano Ronaldo", "answer": "Cristiano Ronaldo" },
+  { "PartitionKey": "Q", "RowKey": "22", "difficulty": 5, "question": "Quel pays a organisé la Coupe du Monde 2002 ?", "choice1": "Japon / Corée du Sud", "choice2": "Allemagne", "choice3": "États-Unis", "answer": "Japon / Corée du Sud" },
+  { "PartitionKey": "Q", "RowKey": "23", "difficulty": 7, "question": "Combien de buts a mis Ronaldo 'R9' en Coupe du Monde 2002 ?", "choice1": "6", "choice2": "8", "choice3": "9", "answer": "8" },
+  { "PartitionKey": "Q", "RowKey": "24", "difficulty": 10, "question": "Qui a reçu le premier Ballon d'Or de l'histoire ?", "choice1": "Di Stéfano", "choice2": "Stanley Matthews", "choice3": "Kopa", "answer": "Stanley Matthews" },
+
+  { "PartitionKey": "Q", "RowKey": "25", "difficulty": 6, "question": "En quelle année le PSG a-t-il été fondé ?", "choice1": "1970", "choice2": "1968", "choice3": "1974", "answer": "1970" },
+
+  { "PartitionKey": "Q", "RowKey": "26", "difficulty": 6, "question": "Quel club a remporté la Ligue 1 2012 ?", "choice1": "Montpellier", "choice2": "Lille", "choice3": "PSG", "answer": "Montpellier" },
+
+  { "PartitionKey": "Q", "RowKey": "27", "difficulty": 8, "question": "Quel club a été relégué en 1999 puis champion de PL en 2016 ?", "choice1": "Leicester", "choice2": "Blackburn", "choice3": "Leeds", "answer": "Leicester" },
+
+  { "PartitionKey": "Q", "RowKey": "28", "difficulty": 3, "question": "De quel pays est originaire Luka Modrić ?", "choice1": "Serbie", "choice2": "Croatie", "choice3": "Bosnie", "answer": "Croatie" },
+
+  { "PartitionKey": "Q", "RowKey": "29", "difficulty": 4, "question": "Qui a marqué le but en or en finale de l’Euro 2000 ?", "choice1": "Trezeguet", "choice2": "Henry", "choice3": "Zidane", "answer": "Trezeguet" },
+
+  { "PartitionKey": "Q", "RowKey": "30", "difficulty": 3, "question": "Quelle équipe est surnommée les 'Three Lions' ?", "choice1": "Angleterre", "choice2": "Écosse", "choice3": "Pays de Galles", "answer": "Angleterre" },
+
+  { "PartitionKey": "Q", "RowKey": "31", "difficulty": 9, "question": "Quel club détient le record de finales de C1 perdues ?", "choice1": "Juventus", "choice2": "Valence", "choice3": "Benfica", "answer": "Juventus" },
+
+  { "PartitionKey": "Q", "RowKey": "32", "difficulty": 10, "question": "Quel pays a remporté l’Euro 1992 alors qu'il n'était même pas qualifié à la base ?", "choice1": "Danemark", "choice2": "URSS", "choice3": "Yougoslavie", "answer": "Danemark" },
+
+  { "PartitionKey": "Q", "RowKey": "33", "difficulty": 7, "question": "Dans quel club évoluait Ronaldinho avant Barcelone ?", "choice1": "PSG", "choice2": "Milan AC", "choice3": "Gremio", "answer": "PSG" },
+
+  { "PartitionKey": "Q", "RowKey": "34", "difficulty": 9, "question": "Quel joueur a raté un pénalty en finale CDM 1994 ?", "choice1": "Baggio", "choice2": "Romario", "choice3": "Dunga", "answer": "Baggio" },
+
+  { "PartitionKey": "Q", "RowKey": "35", "difficulty": 8, "question": "Qui a inventé le 'Cruyff Turn' ?", "choice1": "Cruyff", "choice2": "Eusebio", "choice3": "Best", "answer": "Cruyff" },
+
+  { "PartitionKey": "Q", "RowKey": "36", "difficulty": 6, "question": "Quel joueur est surnommé 'El Niño' ?", "choice1": "Fernando Torres", "choice2": "Luis Suarez", "choice3": "Benzema", "answer": "Fernando Torres" },
+
+  { "PartitionKey": "Q", "RowKey": "37", "difficulty": 4, "question": "Dans quel club Rooney a-t-il commencé ?", "choice1": "Everton", "choice2": "Manchester United", "choice3": "Derby County", "answer": "Everton" },
+
+  { "PartitionKey": "Q", "RowKey": "38", "difficulty": 8, "question": "Quel club a gagné la C1 en 1986 ?", "choice1": "Steaua Bucarest", "choice2": "Real Madrid", "choice3": "Liverpool", "answer": "Steaua Bucarest" },
+
+  { "PartitionKey": "Q", "RowKey": "39", "difficulty": 9, "question": "Quel pays a gagné les JO 1996 (tournoi de foot) ?", "choice1": "Nigeria", "choice2": "Brésil", "choice3": "Argentine", "answer": "Nigeria" },
+
+  { "PartitionKey": "Q", "RowKey": "40", "difficulty": 10, "question": "Quel joueur détient le record absolu de sélections internationales ?", "choice1": "Soh Chin Ann", "choice2": "Ronaldo", "choice3": "Ahmed Hassan", "answer": "Soh Chin Ann" },
+
+  { "PartitionKey": "Q", "RowKey": "41", "difficulty": 9, "question": "Quel club a perdu la finale de C1 1960 sur le score de 7-3 ?", "choice1": "Francfort", "choice2": "Benfica", "choice3": "Rangers", "answer": "Francfort" },
+
+  { "PartitionKey": "Q", "RowKey": "42", "difficulty": 7, "question": "Quel pays a remporté la CAN 2012 ?", "choice1": "Zambie", "choice2": "Ghana", "choice3": "Côte d'Ivoire", "answer": "Zambie" },
+
+  { "PartitionKey": "Q", "RowKey": "43", "difficulty": 8, "question": "Quel joueur a le plus de cartons rouges en carrière ?", "choice1": "Sergio Ramos", "choice2": "Mexès", "choice3": "Gerardo Bedoya", "answer": "Gerardo Bedoya" },
+
+  { "PartitionKey": "Q", "RowKey": "44", "difficulty": 3, "question": "Quel club a recruté Erling Haaland en 2022 ?", "choice1": "Manchester City", "choice2": "Dortmund", "choice3": "Real Madrid", "answer": "Manchester City" },
+
+  { "PartitionKey": "Q", "RowKey": "45", "difficulty": 2, "question": "Quel club joue au Camp Nou ?", "choice1": "Barcelone", "choice2": "Real Madrid", "choice3": "Valence", "answer": "Barcelone" },
+
+  { "PartitionKey": "Q", "RowKey": "46", "difficulty": 4, "question": "Qui a gagné l'Euro 2016 ?", "choice1": "Portugal", "choice2": "France", "choice3": "Allemagne", "answer": "Portugal" },
+
+  { "PartitionKey": "Q", "RowKey": "47", "difficulty": 5, "question": "Qui est l’entraîneur ayant gagné le plus de LDC ?", "choice1": "Ancelotti", "choice2": "Guardiola", "choice3": "Ferguson", "answer": "Ancelotti" },
+
+  { "PartitionKey": "Q", "RowKey": "48", "difficulty": 7, "question": "Quel joueur a marqué un doublé en finale CDM 1970 ?", "choice1": "Pelé", "choice2": "Gerson", "choice3": "Carlos Alberto", "answer": "Pelé" },
+
+  { "PartitionKey": "Q", "RowKey": "49", "difficulty": 9, "question": "Quel pays a perdu la finale CDM 1954 'miracle de Berne' ?", "choice1": "Hongrie", "choice2": "Autriche", "choice3": "Italie", "answer": "Hongrie" },
+
+  { "PartitionKey": "Q", "RowKey": "50", "difficulty": 10, "question": "Quel joueur a disputé le plus de Classicos Barça–Real ?", "choice1": "Sergio Ramos", "choice2": "Messi", "choice3": "Gento", "answer": "Sergio Ramos" }
+    ,
+  { "PartitionKey": "Q", "RowKey": "51", "difficulty": 2,
+    "question": "Quel club est surnommé 'Les Gunners' ?", 
+    "choice1": "Arsenal", "choice2": "Chelsea", "choice3": "Tottenham", "answer": "Arsenal" },
+
+  { "PartitionKey": "Q", "RowKey": "52", "difficulty": 3,
+    "question": "Quel joueur est appelé 'El Pistolero' ?", 
+    "choice1": "Luis Suarez", "choice2": "Cavani", "choice3": "Haaland", "answer": "Luis Suarez" },
+
+  { "PartitionKey": "Q", "RowKey": "53", "difficulty": 4,
+    "question": "Quel club a remporté la Premier League 1995 ?", 
+    "choice1": "Blackburn", "choice2": "Liverpool", "choice3": "Arsenal", "answer": "Blackburn" },
+
+  { "PartitionKey": "Q", "RowKey": "54", "difficulty": 1,
+    "question": "Dans quel club joue Vinícius Jr en 2024 ?", 
+    "choice1": "Real Madrid", "choice2": "Barcelone", "choice3": "PSG", "answer": "Real Madrid" },
+
+  { "PartitionKey": "Q", "RowKey": "55", "difficulty": 6,
+    "question": "Quel joueur a marqué le but décisif de Chelsea en finale de C1 2012 ?", 
+    "choice1": "Drogba", "choice2": "Lampard", "choice3": "Torres", "answer": "Drogba" },
+
+  { "PartitionKey": "Q", "RowKey": "56", "difficulty": 5,
+    "question": "Quel pays est surnommé 'La Roja' ?", 
+    "choice1": "Espagne", "choice2": "Chili", "choice3": "Colombie", "answer": "Espagne" },
+
+  { "PartitionKey": "Q", "RowKey": "57", "difficulty": 8,
+    "question": "Qui a marqué le but du siècle en 1986 contre l’Angleterre ?", 
+    "choice1": "Maradona", "choice2": "Lineker", "choice3": "Platini", "answer": "Maradona" },
+
+  { "PartitionKey": "Q", "RowKey": "58", "difficulty": 3,
+    "question": "Quel sélectionneur a gagné l’Euro 2016 avec le Portugal ?", 
+    "choice1": "Fernando Santos", "choice2": "Scolari", "choice3": "Queiroz", "answer": "Fernando Santos" },
+
+  { "PartitionKey": "Q", "RowKey": "59", "difficulty": 7,
+    "question": "Qui détient le record de matchs joués en sélection française ?", 
+    "choice1": "Lloris", "choice2": "Deschamps", "choice3": "Zidane", "answer": "Lloris" },
+
+  { "PartitionKey": "Q", "RowKey": "60", "difficulty": 8,
+    "question": "Quel club a remporté la Copa Libertadores 2018 après un final retour à Madrid ?", 
+    "choice1": "River Plate", "choice2": "Boca Juniors", "choice3": "Independiente", "answer": "River Plate" },
+
+  { "PartitionKey": "Q", "RowKey": "61", "difficulty": 4,
+    "question": "Quel joueur a popularisé la célébration 'Siuuu' ?", 
+    "choice1": "Cristiano Ronaldo", "choice2": "Bale", "choice3": "Haaland", "answer": "Cristiano Ronaldo" },
+
+  { "PartitionKey": "Q", "RowKey": "62", "difficulty": 2,
+    "question": "Quel poste occupe habituellement Manuel Neuer ?", 
+    "choice1": "Gardien", "choice2": "Défenseur", "choice3": "Attaquant", "answer": "Gardien" },
+
+  { "PartitionKey": "Q", "RowKey": "63", "difficulty": 7,
+    "question": "Qui a remporté le Ballon d’Or 2007 ?", 
+    "choice1": "Kaká", "choice2": "Messi", "choice3": "Cristiano Ronaldo", "answer": "Kaká" },
+
+  { "PartitionKey": "Q", "RowKey": "64", "difficulty": 5,
+    "question": "Quel club a révélé Sadio Mané en Europe ?", 
+    "choice1": "Salzbourg", "choice2": "Southampton", "choice3": "Liverpool", "answer": "Salzbourg" },
+
+  { "PartitionKey": "Q", "RowKey": "65", "difficulty": 6,
+    "question": "Quel club remporte la Serie A invaincu en 2004 ?", 
+    "choice1": "AC Milan", "choice2": "Inter", "choice3": "Arsenal (PL)", "answer": "AC Milan" },
+
+  { "PartitionKey": "Q", "RowKey": "66", "difficulty": 9,
+    "question": "Quel joueur détient le record de matchs consécutifs en Premier League ?", 
+    "choice1": "Brad Friedel", "choice2": "Gary Neville", "choice3": "Lampard", "answer": "Brad Friedel" },
+
+  { "PartitionKey": "Q", "RowKey": "67", "difficulty": 10,
+    "question": "Quel arbitre a dirigé la finale de Coupe du Monde 2006 ?", 
+    "choice1": "Horacio Elizondo", "choice2": "Howard Webb", "choice3": "Nicola Rizzoli", "answer": "Horacio Elizondo" },
+
+  { "PartitionKey": "Q", "RowKey": "68", "difficulty": 4,
+    "question": "Quel club possède le surnom 'Les Dogues' ?", 
+    "choice1": "Lille", "choice2": "Nice", "choice3": "Reims", "answer": "Lille" },
+
+  { "PartitionKey": "Q", "RowKey": "69", "difficulty": 7,
+    "question": "Qui marque le but de la victoire pour l'Espagne en finale CDM 2010 ?", 
+    "choice1": "Iniesta", "choice2": "Torres", "choice3": "Villa", "answer": "Iniesta" },
+
+  { "PartitionKey": "Q", "RowKey": "70", "difficulty": 8,
+    "question": "Quel club a battu le Barça 8-2 en C1 2020 ?", 
+    "choice1": "Bayern", "choice2": "PSG", "choice3": "Liverpool", "answer": "Bayern" },
+
+  { "PartitionKey": "Q", "RowKey": "71", "difficulty": 5,
+    "question": "De quel pays est originaire Riyad Mahrez ?", 
+    "choice1": "Algérie", "choice2": "Maroc", "choice3": "Tunisie", "answer": "Algérie" },
+
+  { "PartitionKey": "Q", "RowKey": "72", "difficulty": 2,
+    "question": "Quel club joue au Stade Vélodrome ?", 
+    "choice1": "OM", "choice2": "OL", "choice3": "PSG", "answer": "OM" },
+
+  { "PartitionKey": "Q", "RowKey": "73", "difficulty": 10,
+    "question": "Quel joueur détient le record de penalties inscrits en carrière ?", 
+    "choice1": "Cristiano Ronaldo", "choice2": "Messi", "choice3": "Francesco Totti", "answer": "Francesco Totti" },
+
+  { "PartitionKey": "Q", "RowKey": "74", "difficulty": 4,
+    "question": "Quel pays a gagné la CAN 2019 ?", 
+    "choice1": "Algérie", "choice2": "Sénégal", "choice3": "Égypte", "answer": "Algérie" },
+
+  { "PartitionKey": "Q", "RowKey": "75", "difficulty": 6,
+    "question": "Quel joueur a remporté le Soulier d’Or 2018 ?", 
+    "choice1": "Harry Kane", "choice2": "Griezmann", "choice3": "Mbappé", "answer": "Harry Kane" },
+
+  { "PartitionKey": "Q", "RowKey": "76", "difficulty": 1,
+    "question": "Quel club est entraîné par Pep Guardiola en 2024 ?", 
+    "choice1": "Manchester City", "choice2": "Barcelone", "choice3": "Bayern", "answer": "Manchester City" },
+
+  { "PartitionKey": "Q", "RowKey": "77", "difficulty": 9,
+    "question": "Quel pays a inventé le 'catenaccio' ?", 
+    "choice1": "Italie", "choice2": "Argentine", "choice3": "Allemagne", "answer": "Italie" },
+
+  { "PartitionKey": "Q", "RowKey": "78", "difficulty": 2,
+    "question": "Quel joueur est surnommé 'La Joya' ?", 
+    "choice1": "Dybala", "choice2": "Di Maria", "choice3": "Neymar", "answer": "Dybala" },
+
+  { "PartitionKey": "Q", "RowKey": "79", "difficulty": 6,
+    "question": "Quel pays a atteint la finale CDM 1954 avec le surnom 'Les Magyars Magiques' ?", 
+    "choice1": "Hongrie", "choice2": "Autriche", "choice3": "Roumanie", "answer": "Hongrie" },
+
+  { "PartitionKey": "Q", "RowKey": "80", "difficulty": 5,
+    "question": "Quel joueur a marqué un retourné légendaire en C1 2018 contre la Juve ?", 
+    "choice1": "Cristiano Ronaldo", "choice2": "Bale", "choice3": "Salah", "answer": "Cristiano Ronaldo" }
+    ,
+  { "PartitionKey": "Q", "RowKey": "81", "difficulty": 3,
+    "question": "Quel joueur est surnommé 'Kung-Fu Panda' par certains supporters ?", 
+    "choice1": "Giroud", "choice2": "Gignac", "choice3": "Benzema", "answer": "Gignac" },
+
+  { "PartitionKey": "Q", "RowKey": "82", "difficulty": 7,
+    "question": "Quel entraîneur a lancé Mbappé en Ligue 1 à Monaco ?", 
+    "choice1": "Leonardo Jardim", "choice2": "Ranieri", "choice3": "Kovac", "answer": "Leonardo Jardim" },
+
+  { "PartitionKey": "Q", "RowKey": "83", "difficulty": 4,
+    "question": "Quel club a été racheté par le fonds souverain d’Arabie Saoudite en 2021 ?", 
+    "choice1": "Newcastle", "choice2": "Everton", "choice3": "Leeds", "answer": "Newcastle" },
+
+  { "PartitionKey": "Q", "RowKey": "84", "difficulty": 8,
+    "question": "Quel défenseur a arrêté le plus de penaltys en Premier League ?", 
+    "choice1": "David Seaman", "choice2": "Petr Čech", "choice3": "Jens Lehmann", "answer": "Jens Lehmann" },
+
+  { "PartitionKey": "Q", "RowKey": "85", "difficulty": 6,
+    "question": "Qui marque le but égalisateur pour la France en finale CDM 2022 sur penalty ?", 
+    "choice1": "Mbappé", "choice2": "Griezmann", "choice3": "Giroud", "answer": "Mbappé" },
+
+  { "PartitionKey": "Q", "RowKey": "86", "difficulty": 5,
+    "question": "Quel joueur est célèbre pour son dribble 'Elastico' ?", 
+    "choice1": "Ronaldinho", "choice2": "Ronaldo", "choice3": "Neymar", "answer": "Ronaldinho" },
+
+  { "PartitionKey": "Q", "RowKey": "87", "difficulty": 9,
+    "question": "Quel pays détient le record de défaites consécutives en Coupe du Monde ?", 
+    "choice1": "Mexique", "choice2": "Corée du Sud", "choice3": "Salvador", "answer": "Mexique" },
+
+  { "PartitionKey": "Q", "RowKey": "88", "difficulty": 2,
+    "question": "Quelle star a joué pour Manchester United, Real Madrid et Juventus ?", 
+    "choice1": "Cristiano Ronaldo", "choice2": "Di Maria", "choice3": "Pogba", "answer": "Cristiano Ronaldo" },
+
+  { "PartitionKey": "Q", "RowKey": "89", "difficulty": 4,
+    "question": "Quel club est connu comme 'Les Colchoneros' ?", 
+    "choice1": "Atlético Madrid", "choice2": "Valence", "choice3": "Séville", "answer": "Atlético Madrid" },
+
+  { "PartitionKey": "Q", "RowKey": "90", "difficulty": 10,
+    "question": "Quel joueur détient le record de matchs en Ligue 1 ?", 
+    "choice1": "Mickaël Landreau", "choice2": "Pauleta", "choice3": "Sagnol", "answer": "Mickaël Landreau" },
+
+  { "PartitionKey": "Q", "RowKey": "91", "difficulty": 3,
+    "question": "Quel club a remporté la coupe de France 2022 ?", 
+    "choice1": "Nantes", "choice2": "Nice", "choice3": "Rennes", "answer": "Nantes" },
+
+  { "PartitionKey": "Q", "RowKey": "92", "difficulty": 8,
+    "question": "Quel joueur a fait un coup du foulard en finale de LDC 2002 ?", 
+    "choice1": "Roberto Carlos", "choice2": "Zidane", "choice3": "Figo", "answer": "Roberto Carlos" },
+
+  { "PartitionKey": "Q", "RowKey": "93", "difficulty": 4,
+    "question": "Quel joueur est surnommé 'El Comandante' ?", 
+    "choice1": "Cristiano Ronaldo", "choice2": "Sergio Ramos", "choice3": "Piqué", "answer": "Cristiano Ronaldo" },
+
+  { "PartitionKey": "Q", "RowKey": "94", "difficulty": 7,
+    "question": "Qui a été élu meilleur joueur de la CAN 2021 ?", 
+    "choice1": "Sadio Mané", "choice2": "Mahrez", "choice3": "Salah", "answer": "Sadio Mané" },
+
+  { "PartitionKey": "Q", "RowKey": "95", "difficulty": 5,
+    "question": "Quel coach est célèbre pour la 'philosophie du jeu de position' ?", 
+    "choice1": "Guardiola", "choice2": "Mourinho", "choice3": "Klopp", "answer": "Guardiola" },
+
+  { "PartitionKey": "Q", "RowKey": "96", "difficulty": 9,
+    "question": "Quel pays détient le record de participations consécutives à la Coupe du Monde ?", 
+    "choice1": "Brésil", "choice2": "Allemagne", "choice3": "Mexique", "answer": "Brésil" },
+
+  { "PartitionKey": "Q", "RowKey": "97", "difficulty": 6,
+    "question": "Quel joueur a marqué le but du titre pour Leicester en 2016 ?", 
+    "choice1": "Mahrez", "choice2": "Vardy", "choice3": "Okazaki", "answer": "Jamie Vardy" },
+
+  { "PartitionKey": "Q", "RowKey": "98", "difficulty": 8,
+    "question": "Quel joueur a déclaré 'Je crois que j’ai été trop rapide pour mon cerveau' ?", 
+    "choice1": "Balotelli", "choice2": "Robinho", "choice3": "Antonio Cassano", "answer": "Balotelli" },
+
+  { "PartitionKey": "Q", "RowKey": "99", "difficulty": 10,
+    "question": "Quel arbitre a inventé l’expression 'Avantage !' ?", 
+    "choice1": "Ken Aston", "choice2": "Collina", "choice3": "Webb", "answer": "Ken Aston" },
+
+  { "PartitionKey": "Q", "RowKey": "100", "difficulty": 5,
+    "question": "Quel club a été sacré champion de Bundesliga 2023 ?", 
+    "choice1": "Bayern Munich", "choice2": "Dortmund", "choice3": "Leipzig", "answer": "Bayern Munich" },
+
+  { "PartitionKey": "Q", "RowKey": "101", "difficulty": 7,
+    "question": "Quel joueur a été mis dehors du vestiaire du Barça par Luis Enrique en 2014 ?", 
+    "choice1": "Dani Alves", "choice2": "Messi", "choice3": "Neymar", "answer": "Messi" },
+
+  { "PartitionKey": "Q", "RowKey": "102", "difficulty": 9,
+    "question": "De quel club provient Luka Jović lorsqu'il signe au Real Madrid ?", 
+    "choice1": "Eintracht Francfort", "choice2": "Leipzig", "choice3": "Benfica", "answer": "Eintracht Francfort" },
+
+  { "PartitionKey": "Q", "RowKey": "103", "difficulty": 3,
+    "question": "Quel club est surnommé 'Les Merengues' ?", 
+    "choice1": "Real Madrid", "choice2": "Sevilla", "choice3": "Valence", "answer": "Real Madrid" },
+
+  { "PartitionKey": "Q", "RowKey": "104", "difficulty": 4,
+    "question": "Quel joueur est célèbre pour sa panenka ratée en 2020 ?", 
+    "choice1": "Zaza", "choice2": "Bruno Fernandes", "choice3": "Griezmann", "answer": "Bruno Fernandes" },
+
+  { "PartitionKey": "Q", "RowKey": "105", "difficulty": 6,
+    "question": "Quel joueur a été banni de l'équipe du Ghana en CDM 2014 ?", 
+    "choice1": "Sulley Muntari", "choice2": "Essien", "choice3": "Gyan", "answer": "Sulley Muntari" },
+
+  { "PartitionKey": "Q", "RowKey": "106", "difficulty": 8,
+    "question": "Quel pays a gagné la Gold Cup 2021 ?", 
+    "choice1": "États-Unis", "choice2": "Mexique", "choice3": "Canada", "answer": "États-Unis" },
+
+  { "PartitionKey": "Q", "RowKey": "107", "difficulty": 10,
+    "question": "Quel gardien a été élu meilleur joueur d'une Coupe du Monde ?", 
+    "choice1": "Oliver Kahn", "choice2": "Buffon", "choice3": "Neuer", "answer": "Oliver Kahn" },
+
+  { "PartitionKey": "Q", "RowKey": "108", "difficulty": 3,
+    "question": "Quel club possède le surnom 'Les Phocéens' ?", 
+    "choice1": "OM", "choice2": "Nice", "choice3": "Lens", "answer": "OM" },
+
+  { "PartitionKey": "Q", "RowKey": "109", "difficulty": 7,
+    "question": "Quel joueur a marqué un triplé en finale de C3 2019 ?", 
+    "choice1": "Eden Hazard", "choice2": "Giroud", "choice3": "Aubameyang", "answer": "Eden Hazard" },
+
+  { "PartitionKey": "Q", "RowKey": "110", "difficulty": 8,
+    "question": "Quel coach a gagné la LDC avec deux clubs différents ?", 
+    "choice1": "Ancelotti", "choice2": "Mourinho", "choice3": "Zidane", "answer": "Ancelotti" }
+
+    ,
+  { "PartitionKey": "Q", "RowKey": "111", "difficulty": 3,
+    "question": "Quel joueur est surnommé 'Le Bison' ?", 
+    "choice1": "Essien", "choice2": "Makelele", "choice3": "Yaya Touré", "answer": "Essien" },
+
+  { "PartitionKey": "Q", "RowKey": "112", "difficulty": 6,
+    "question": "Quel club a éliminé le PSG avec un doublé de Choupo-Moting en 2020 ?", 
+    "choice1": "Bayern Munich", "choice2": "Manchester City", "choice3": "Leipzig", "answer": "Bayern Munich" },
+
+  { "PartitionKey": "Q", "RowKey": "113", "difficulty": 8,
+    "question": "Quel joueur a été suspendu pour avoir mordu un adversaire en CDM 2014 ?", 
+    "choice1": "Suarez", "choice2": "Pepe", "choice3": "Materazzi", "answer": "Suarez" },
+
+  { "PartitionKey": "Q", "RowKey": "114", "difficulty": 4,
+    "question": "Quel club a perdu une finale de LDC sur un but casquette de Karius ?", 
+    "choice1": "Liverpool", "choice2": "Arsenal", "choice3": "Juventus", "answer": "Liverpool" },
+
+  { "PartitionKey": "Q", "RowKey": "115", "difficulty": 10,
+    "question": "Quel club détient le record du nombre de défaites en finale de LDC ?", 
+    "choice1": "Juventus", "choice2": "Benfica", "choice3": "Chelsea", "answer": "Juventus" },
+
+  { "PartitionKey": "Q", "RowKey": "116", "difficulty": 5,
+    "question": "Quel joueur célèbre portait le numéro 21 à la Juventus ?", 
+    "choice1": "Pirlo", "choice2": "Del Piero", "choice3": "Chiellini", "answer": "Pirlo" },
+
+  { "PartitionKey": "Q", "RowKey": "117", "difficulty": 7,
+    "question": "Quel joueur a marqué un retourné incroyable avec Manchester United en 2011 ?", 
+    "choice1": "Rooney", "choice2": "Van Persie", "choice3": "Tevez", "answer": "Rooney" },
+
+  { "PartitionKey": "Q", "RowKey": "118", "difficulty": 3,
+    "question": "Quel club est surnommé 'Les Canaris' ?", 
+    "choice1": "Nantes", "choice2": "Nice", "choice3": "Lorient", "answer": "Nantes" },
+
+  { "PartitionKey": "Q", "RowKey": "119", "difficulty": 8,
+    "question": "Quel pays a été éliminé par un but de la main en CDM 2010 ?", 
+    "choice1": "Ghana", "choice2": "Uruguay", "choice3": "USA", "answer": "Ghana" },
+
+  { "PartitionKey": "Q", "RowKey": "120", "difficulty": 4,
+    "question": "Qui est le joueur le plus capé de l'histoire du Barça ?", 
+    "choice1": "Messi", "choice2": "Xavi", "choice3": "Iniesta", "answer": "Messi" },
+
+  { "PartitionKey": "Q", "RowKey": "121", "difficulty": 2,
+    "question": "Quel pays a organisé l’Euro 2016 ?", 
+    "choice1": "France", "choice2": "Portugal", "choice3": "Belgique", "answer": "France" },
+
+  { "PartitionKey": "Q", "RowKey": "122", "difficulty": 6,
+    "question": "Quel joueur a tiré un penalty façon rugby en finale d’Euro 2004 ?", 
+    "choice1": "Beckham", "choice2": "Henry", "choice3": "Zidane", "answer": "Beckham" },
+
+  { "PartitionKey": "Q", "RowKey": "123", "difficulty": 5,
+    "question": "Quelle équipe est surnommée 'Les Super Eagles' ?", 
+    "choice1": "Nigeria", "choice2": "Ghana", "choice3": "Cameroun", "answer": "Nigeria" },
+
+  { "PartitionKey": "Q", "RowKey": "124", "difficulty": 9,
+    "question": "Quel championnat a le plus grand nombre de supporters par match en moyenne ?", 
+    "choice1": "Bundesliga", "choice2": "Premier League", "choice3": "Liga", "answer": "Bundesliga" },
+
+  { "PartitionKey": "Q", "RowKey": "125", "difficulty": 8,
+    "question": "Quel joueur a inventé la 'Rabona' moderne ?", 
+    "choice1": "Ricardo Infante", "choice2": "Erik Lamela", "choice3": "Ortega", "answer": "Ricardo Infante" },
+
+  { "PartitionKey": "Q", "RowKey": "126", "difficulty": 7,
+    "question": "Qui inscrit le but du 3–0 contre le Brésil en demi-finale 2014 ?", 
+    "choice1": "Kroos", "choice2": "Klose", "choice3": "Schürrle", "answer": "Kroos" },
+
+  { "PartitionKey": "Q", "RowKey": "127", "difficulty": 4,
+    "question": "Quel club est surnommé 'Les Sang et Or' ?", 
+    "choice1": "Lens", "choice2": "Rennes", "choice3": "Reims", "answer": "Lens" },
+
+  { "PartitionKey": "Q", "RowKey": "128", "difficulty": 10,
+    "question": "Quel est le plus vieux club professionnel encore actif ?", 
+    "choice1": "Notts County", "choice2": "Sheffield FC", "choice3": "Fulham", "answer": "Notts County" },
+
+  { "PartitionKey": "Q", "RowKey": "129", "difficulty": 6,
+    "question": "Quel joueur a mis un CSC légendaire en finale de C1 2018 ?", 
+    "choice1": "Karius", "choice2": "Bale", "choice3": "Sergio Ramos", "answer": "Karius" },
+
+  { "PartitionKey": "Q", "RowKey": "130", "difficulty": 9,
+    "question": "Quel club détient le record d'invincibilité en championnat européen ?", 
+    "choice1": "Steaua Bucarest", "choice2": "Juventus", "choice3": "Benfica", "answer": "Steaua Bucarest" },
+
+  { "PartitionKey": "Q", "RowKey": "131", "difficulty": 3,
+    "question": "Qui est le meilleur buteur de l’histoire du PSG ?", 
+    "choice1": "Mbappé", "choice2": "Ibrahimovic", "choice3": "Cavani", "answer": "Mbappé" },
+
+  { "PartitionKey": "Q", "RowKey": "132", "difficulty": 7,
+    "question": "Quel joueur du Real Madrid a mis un triplé contre l’Espagne en CDM 2018 ?", 
+    "choice1": "Cristiano Ronaldo", "choice2": "Morata", "choice3": "Isco", "answer": "Cristiano Ronaldo" },
+
+  { "PartitionKey": "Q", "RowKey": "133", "difficulty": 8,
+    "question": "Quel attaquant déclare un jour : 'Why always me ?' après un but ?", 
+    "choice1": "Balotelli", "choice2": "Tevez", "choice3": "Adebayor", "answer": "Balotelli" },
+
+  { "PartitionKey": "Q", "RowKey": "134", "difficulty": 5,
+    "question": "Quel club a produit Drogba avant l’OM ?", 
+    "choice1": "Guingamp", "choice2": "Lorient", "choice3": "Le Mans", "answer": "Guingamp" },
+
+  { "PartitionKey": "Q", "RowKey": "135", "difficulty": 6,
+    "question": "Quel joueur a été exclu de la sélection française pour avoir fait le pitre dans le bus en 2010 ?", 
+    "choice1": "Nicolas Anelka", "choice2": "Evra", "choice3": "Ribéry", "answer": "Nicolas Anelka" },
+
+  { "PartitionKey": "Q", "RowKey": "136", "difficulty": 10,
+    "question": "Quel sélectionneur a gagné la Copa America, la Coupe du Monde et la Coupe des Confédérations ?", 
+    "choice1": "Carlos Alberto Parreira", "choice2": "Scolari", "choice3": "Bielsa", "answer": "Carlos Alberto Parreira" },
+
+  { "PartitionKey": "Q", "RowKey": "137", "difficulty": 4,
+    "question": "Quel pays est surnommé 'La Nazionale' ?", 
+    "choice1": "Italie", "choice2": "Espagne", "choice3": "Argentine", "answer": "Italie" },
+
+  { "PartitionKey": "Q", "RowKey": "138", "difficulty": 8,
+    "question": "Quel joueur suisse a mis un triplé mémorable contre la France à l’Euro 2021 ?", 
+    "choice1": "Seferovic", "choice2": "Shaqiri", "choice3": "Embolo", "answer": "Seferovic" },
+
+  { "PartitionKey": "Q", "RowKey": "139", "difficulty": 7,
+    "question": "Quel club est connu comme 'Les Blues' ?", 
+    "choice1": "Chelsea", "choice2": "Rangers", "choice3": "Cardiff", "answer": "Chelsea" },
+
+  { "PartitionKey": "Q", "RowKey": "140", "difficulty": 6,
+    "question": "Quel joueur du PSG a célébré un but avec un masque de Spider-Man ?", 
+    "choice1": "Aubameyang", "choice2": "Neymar", "choice3": "Hakimi", "answer": "Aubameyang" },
+
+  { "PartitionKey": "Q", "RowKey": "141", "difficulty": 5,
+    "question": "Quel pays a gagné la CDM 2006 ?", 
+    "choice1": "Italie", "choice2": "France", "choice3": "Brésil", "answer": "Italie" },
+
+  { "PartitionKey": "Q", "RowKey": "142", "difficulty": 9,
+    "question": "Quel joueur a raté trois finales de LDC consécutives avec l’Atlético ?", 
+    "choice1": "Gabi", "choice2": "Godín", "choice3": "Koke", "answer": "Koke" },
+
+  { "PartitionKey": "Q", "RowKey": "143", "difficulty": 8,
+    "question": "Quel pays détient le record de défaites en finale de Copa America ?", 
+    "choice1": "Argentine", "choice2": "Uruguay", "choice3": "Paraguay", "answer": "Argentine" },
+
+  { "PartitionKey": "Q", "RowKey": "144", "difficulty": 10,
+    "question": "Quelle équipe détient le plus vieux maillot encore utilisé ?", 
+    "choice1": "Queen’s Park", "choice2": "Celtic", "choice3": "Sheffield United", "answer": "Queen’s Park" },
+
+  { "PartitionKey": "Q", "RowKey": "145", "difficulty": 7,
+    "question": "Quel joueur est célèbre pour la feinte 'Roulade de Neymar' après un petit contact ?", 
+    "choice1": "Neymar", "choice2": "Di Maria", "choice3": "Verratti", "answer": "Neymar" },
+
+  { "PartitionKey": "Q", "RowKey": "146", "difficulty": 6,
+    "question": "Quel joueur croate a une célébration totalement éclatée où il court partout sans logique ?", 
+    "choice1": "Rebić", "choice2": "Mandzukic", "choice3": "Brozović", "answer": "Rebić" },
+
+  { "PartitionKey": "Q", "RowKey": "147", "difficulty": 5,
+    "question": "Quel joueur est surnommé 'Le Pitbull' ?", 
+    "choice1": "Gennaro Gattuso", "choice2": "Arturo Vidal", "choice3": "Casemiro", "answer": "Gennaro Gattuso" },
+
+  { "PartitionKey": "Q", "RowKey": "148", "difficulty": 8,
+    "question": "Quel club a perdu une finale de LDC 2013 sur un CSC du malheureux défenseur ?", 
+    "choice1": "Dortmund", "choice2": "Bayern", "choice3": "Juventus", "answer": "Dortmund" },
+
+  { "PartitionKey": "Q", "RowKey": "149", "difficulty": 2,
+    "question": "Quel pays est champion d'Europe 2008 ?", 
+    "choice1": "Espagne", "choice2": "Allemagne", "choice3": "Portugal", "answer": "Espagne" },
+
+  { "PartitionKey": "Q", "RowKey": "150", "difficulty": 9,
+    "question": "Quel pays a perdu la finale CDM 1950 dans le fameux 'Maracanazo' ?", 
+    "choice1": "Brésil", "choice2": "Uruguay", "choice3": "Argentine", "answer": "Brésil" }
+
+
+]

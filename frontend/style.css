@@ -1,0 +1,243 @@
+/* ————————————————————————————————
+   LAYOUT GLOBAL
+—————————————————————————————— */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0a1023, #07101d);
+  font-family: "Inter", sans-serif;
+  color: white;
+  display: flex;
+}
+
+.main {
+  flex: 1;
+  padding: 40px 70px;
+  max-width: 900px;
+}
+
+/* ————————————————————————————————
+   SIDEBAR
+—————————————————————————————— */
+#sidebar {
+  width: 330px;
+  background: rgba(255,255,255,0.04);
+  border-left: 1px solid rgba(255,255,255,0.1);
+  padding: 40px 20px;
+  height: 100vh;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+}
+
+#sidebar h2 {
+  margin-top: 0;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#sidebar li {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.12);
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+#sidebar li:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ————————————————————————————————
+   CARTES / BLOCS
+—————————————————————————————— */
+.card.big {
+  background: rgba(255,255,255,0.05);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  margin-top: 40px;
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 32px;
+  margin: 0 0 10px;
+}
+
+.subtitle {
+  margin: 0 0 30px;
+  opacity: .9;
+}
+
+/* ————————————————————————————————
+   QUIZ
+—————————————————————————————— */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.question-text {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.choices button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: rgba(255,255,255,0.12);
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.choice-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ————————————————————————————————
+   BOUTONS
+—————————————————————————————— */
+.btn {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn.primary {
+  background: #2ecc71;
+  color: black;
+  font-weight: bold;
+}
+
+.btn.secondary {
+  background: #ffffff20;
+  color: white;
+}
+
+.btn.next {
+  margin-top: 20px;
+  background: #3498db;
+  color: white;
+}
+
+.btn:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+/* ————————————————————————————————
+   ÉCRAN DE FIN
+—————————————————————————————— */
+.qi-foot {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.score-final {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.save-box {
+  margin: 20px 0;
+}
+
+.save-box input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px 0;
+}
+
+/* ————————————————————————————————
+   HIDE SCREENS
+—————————————————————————————— */
+.screen { display: none; }
+.screen.active { display: block; }
+/* ————————————————————————————————
+   STATUTS
+—————————————————————————————— */
+.status {
+  font-size: 14px;
+  margin-top: 10px;
+}
+.status.ok {
+  color: #2ecc71;
+}
+.status.error {
+  color: #e74c3c;
+}
+.status.info {
+  color: #3498db;
+}
+.status.warning {
+  color: #f1c40f;
+}
+/* ————————————————————————————————
+   RESPONSIVE
+—————————————————————————————— */
+@media (max-width: 900px) {
+  body {
+    flex-direction: column;
+  }
+  #sidebar {
+    width: 100%;
+    height: auto;
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    top: auto;
+    padding: 20px 10px;
+  }
+  .main {
+    padding: 20px 30px;
+    max-width: none;
+  }
+}
+.choice-btn.correct {
+  background: #2ecc71 !important;   /* vert */
+  color: #000;
+  border: none;
+}
+
+.choice-btn.wrong {
+  background: #e74c3c !important;   /* rouge */
+  color: white;
+  border: none;
+}
+
+.choice-btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+.choice-btn.correct.wrong {
+  background: #f39c12 !important;   /* orange */
+  color: black;
+}
