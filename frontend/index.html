@@ -8,42 +8,66 @@
 
 <body>
 
-  <!-- —— SIDEBAR (Classement) ————————————————————————————— -->
-  <aside id="sidebar">
-      <h2>Classement <span class="icon">🔝</span></h2>
-      <ul id="leaderboard-list"></ul>
-  </aside>
-
   <!-- —— CONTENU PRINCIPAL ————————————————————— -->
   <div class="main">
 
-    <!-- Header -->
-    <header class="header">
-      <h1>Test de QI FOOT <span class="emoji">⚽🧠</span></h1>
-      <p class="subtitle">
-        Réponds aux questions, progresse, et découvre ton vrai niveau de QI Foot.
-      </p>
+    <header class="topbar">
+        <div class="topbar-left">
+            <span class="site-title">FOOT MASTERY ⚽</span>
+        </div>
+
+        <nav class="topbar-nav">
+            <a href="index.html" class="nav-btn active">🏠</a>
+            <a href="leaderboard.html" class="nav-btn ">Classement 🏆</a>
+        </nav>
     </header>
 
-    <!-- ÉCRAN START -->
-    <section id="screen-start" class="screen active card big">
-      <h2>Ton QI Foot est-il digne d’un Ballon d’Or ?</h2>
-      <p>Réponds à 10 questions de foot. La difficulté s'adapte à tes résultats.</p>
-      <button id="btn-start" class="btn primary">Démarrer le quiz</button>
-    </section>
+
+    <div id="home-screen">
+
+    <div class="game-row">
+        <div class="game-card">
+            <h2>Test de QI Foot ⚽</h2>
+            <p>Réponds à 10 questions, difficulté adaptative.</p>
+            <button class="btn primary" onclick="startQiFoot()">Démarrer</button>
+        </div>
+
+        <div class="leaderboard-mini" id="lb-qifoot">
+            <h3>Top QI Foot 🏆</h3>
+            <ul></ul>
+        </div>
+    </div>
+
+    <div class="game-row">
+        <div class="game-card">
+            <h2>Mort Subite ⚡</h2>
+            <p>Réponds jusqu'à te tromper. Le stress commence.</p>
+            <button class="btn secondary" onclick="startSuddenDeath()">Jouer ⚡</button>
+        </div>
+
+        <div class="leaderboard-mini" id="lb-sudden">
+            <h3>Top Mort Subite 🔥</h3>
+            <ul></ul>
+        </div>
+    </div>
+    </div>
 
     <!-- ÉCRAN QUIZ -->
-    <section id="screen-quiz" class="screen card big">
-      <div id="quiz-meta" class="meta">
-        <span id="question-counter"></span>
-        <span id="score-display"></span>
-      </div>
+    <div id="screen-quiz" class="screen">
+        <div class="quiz-container">
 
-      <h2 id="question-text" class="question-text"></h2>
-      <div id="choices" class="choices"></div>
+            <div class="meta">
+                <span id="question-counter"></span>
+                <span id="score-display"></span>
+            </div>
 
-      <button id="btn-next" class="btn next" disabled>Question suivante ▶</button>
-    </section>
+            <div id="question-text" class="question-text"></div>
+
+            <div id="choices" class="choices"></div>
+
+            <button id="btn-next" class="btn next">Question suivante ▶</button>
+        </div>
+    </div>
 
     <!-- ÉCRAN FIN -->
     <section id="screen-end" class="screen card big">
@@ -59,7 +83,6 @@
         <p id="save-status" class="status"></p>
       </div>
 
-      <button id="btn-reload" class="btn secondary">Rejouer 🔁</button>
     </section>
 
   </div>

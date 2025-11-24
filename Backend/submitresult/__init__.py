@@ -11,9 +11,10 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         body = req.get_json()
         name = body.get("name")
         score = body.get("score")
-
-        if not name or score is None:
-            return func.HttpResponse("Missing name or score", status_code=400)
+        mode = body.get("mode", "qifoot")
+        
+        if not name or score is None or not mode:
+            return func.HttpResponse("Missing name, score, or mode", status_code=400)
 
         conn_str = os.environ["TABLE_STORAGE_CONNECTION_STRING"]
         service = TableServiceClient.from_connection_string(conn_str)
@@ -24,7 +25,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             "RowKey": str(uuid.uuid4()),
             "name": name,
             "score": int(score),
-            "timestamp": datetime.utcnow().isoformat()
+            "timestamp": datetime.utcnow().isoformat(),
+            "mode": mode
         }
 
         table.upsert_entity(entity)
