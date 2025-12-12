@@ -1,5 +1,5 @@
 @description('Nom de base pour les ressources')
-param projectName string = 'cloudquizfoot2'
+param projectName string = 'cloudquizfootPROJ'
 
 @description('Emplacement Azure')
 param location string = 'uksouth'
