@@ -148,7 +148,7 @@ Vous devriez voir :
 ### Étape 7 : Déployer le Backend (Azure Functions)
 
 ```bash
-cd Backend
+cd ..
 func azure functionapp publish cloudquizfoot2-functions --build local
 ```
 
