@@ -1,4 +1,4 @@
-# ⚽ Cloud Quiz Foot  
+# ⚽ Cloud Quiz Foot - Groupe 11
 
 Cloud Quiz Foot est une application web cloud-native permettant de jouer à un quiz de football généré dynamiquement.  
 Le projet utilise Azure (App Service, Functions, Table Storage), de l'Infrastructure as Code (Bicep) et un déploiement manuel via Azure CLI.
