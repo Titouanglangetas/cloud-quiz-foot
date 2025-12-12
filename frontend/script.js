@@ -1,5 +1,5 @@
-// 👉 BACKEND LOCAL
-const API_BASE_URL = "http://localhost:7071/api";
+// 👉 BACKEND AZURE
+const API_BASE_URL = "https://cloudquizfoot2-functions.azurewebsites.net/api";
 
 // --- VARIABLES QUIZ QI FOOT ---
 let currentDifficulty = 3;

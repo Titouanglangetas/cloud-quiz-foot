@@ -1,8 +1,8 @@
 @description('Nom de base pour les ressources')
-param projectName string = 'cloudquizfoot'
+param projectName string = 'cloudquizfoot2'
 
 @description('Emplacement Azure')
-param location string = 'northeurope'
+param location string = 'uksouth'
 
 //
 // Storage Account (nécessaire pour Functions + Table Storage)
@@ -61,6 +61,9 @@ resource functionPlan 'Microsoft.Web/serverfarms@2022-03-01' = {
     name: 'Y1'
     tier: 'Dynamic'
   }
+  properties: {
+    reserved: true // Linux
+  }
 }
 
 //
@@ -69,7 +72,7 @@ resource functionPlan 'Microsoft.Web/serverfarms@2022-03-01' = {
 resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
   name: '${projectName}-functions'
   location: location
-  kind: 'functionapp'
+  kind: 'functionapp,linux'
   identity: {
     type: 'SystemAssigned'
   }
@@ -77,10 +80,11 @@ resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
     serverFarmId: functionPlan.id
     httpsOnly: true
     siteConfig: {
+      linuxFxVersion: 'Python|3.11'
       appSettings: [
         {
           name: 'AzureWebJobsStorage'
-          value: storageAccount.properties.primaryEndpoints.blob
+          value: 'DefaultEndpointsProtocol=https;AccountName=${storageAccount.name};AccountKey=${storageAccount.listKeys().keys[0].value};EndpointSuffix=core.windows.net'
         }
         {
           name: 'FUNCTIONS_EXTENSION_VERSION'
@@ -91,8 +95,8 @@ resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
           value: 'python'
         }
         {
-          name: 'TABLE_STORAGE_CONNECTION'
-          value: storageAccount.properties.primaryEndpoints.table
+          name: 'TABLE_STORAGE_CONNECTION_STRING'
+          value: 'DefaultEndpointsProtocol=https;AccountName=${storageAccount.name};AccountKey=${storageAccount.listKeys().keys[0].value};EndpointSuffix=core.windows.net'
         }
       ]
     }

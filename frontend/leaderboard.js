@@ -1,4 +1,4 @@
-const API = "http://localhost:7071/api";
+const API = "https://cloudquizfoot2-functions.azurewebsites.net/api";
 
 async function loadLeaderboard(mode, elementId) {
     try {
