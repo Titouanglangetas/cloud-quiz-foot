@@ -17,16 +17,13 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         service = TableServiceClient.from_connection_string(conn_str)
         table = service.get_table_client("scores")
 
-        # Récupération + filtrage par mode
         entries = [
             e for e in table.list_entities()
             if e.get("mode") == mode
         ]
 
-        # Tri par score décroissant
         entries.sort(key=lambda x: x["score"], reverse=True)
 
-        # Format JSON
         output = [
             {
                 "name": e.get("name", "unknown"),
@@ -34,7 +31,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
                 "timestamp": e.get("timestamp",""),
                 "mode": e.get("mode", "unknown")
             }
-            for e in entries[:10]  # top 10
+            for e in entries[:10]
         ]
 
         return func.HttpResponse(

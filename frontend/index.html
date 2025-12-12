@@ -2,87 +2,157 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Test de QI Foot ⚽🧠</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foot Mastery ⚽ - Quiz Football</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- —— CONTENU PRINCIPAL ————————————————————— -->
+  <div class="particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
   <div class="main">
 
     <header class="topbar">
         <div class="topbar-left">
-            <span class="site-title">FOOT MASTERY ⚽</span>
+            <span class="site-title">⚽ FOOT MASTERY</span>
         </div>
 
         <nav class="topbar-nav">
-            <a href="index.html" class="nav-btn active">🏠</a>
-            <a href="leaderboard.html" class="nav-btn ">Classement 🏆</a>
+            <a href="index.html" class="nav-btn active">
+              <span class="nav-icon">🏠</span>
+              <span class="nav-text">Accueil</span>
+            </a>
+            <a href="leaderboard.html" class="nav-btn">
+              <span class="nav-icon">🏆</span>
+              <span class="nav-text">Classement</span>
+            </a>
         </nav>
     </header>
 
 
     <div id="home-screen">
 
-    <div class="game-row">
-        <div class="game-card">
-            <h2>Test de QI Foot ⚽</h2>
-            <p>Réponds à 10 questions, difficulté adaptative.</p>
-            <button class="btn primary" onclick="startQiFoot()">Démarrer</button>
+      <div class="hero">
+        <h1 class="hero-title">Teste ton <span class="gradient-text">QI Football</span></h1>
+        <p class="hero-subtitle">Prouve que tu es un vrai expert du ballon rond 🔥</p>
+      </div>
+
+      <div class="games-container">
+        <div class="game-row">
+            <div class="game-card qi-mode">
+                <div class="card-glow"></div>
+                <div class="card-icon">🧠</div>
+                <h2>Test de QI Foot</h2>
+                <p>10 questions avec difficulté adaptative. Plus tu réponds juste, plus c'est dur !</p>
+                <div class="card-features">
+                  <span class="feature">📊 Score sur 100</span>
+                  <span class="feature">⏱️ ~3 min</span>
+                </div>
+                <button class="btn primary glow-btn" onclick="startQiFoot()">
+                  <span>Démarrer</span>
+                  <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+
+            <div class="leaderboard-mini" id="lb-qifoot">
+                <div class="lb-header">
+                  <span class="lb-icon">🏆</span>
+                  <h3>Top QI Foot</h3>
+                </div>
+                <ul></ul>
+            </div>
         </div>
 
-        <div class="leaderboard-mini" id="lb-qifoot">
-            <h3>Top QI Foot 🏆</h3>
-            <ul></ul>
+        <div class="game-row">
+            <div class="game-card sudden-mode">
+                <div class="card-glow"></div>
+                <div class="card-icon">⚡</div>
+                <h2>Mort Subite</h2>
+                <p>Une seule erreur et c'est fini ! Combien de questions peux-tu enchaîner ?</p>
+                <div class="card-features">
+                  <span class="feature">💀 Sans filet</span>
+                  <span class="feature">🔥 Adrénaline</span>
+                </div>
+                <button class="btn secondary glow-btn" onclick="startSuddenDeath()">
+                  <span>Jouer</span>
+                  <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+
+            <div class="leaderboard-mini" id="lb-sudden">
+                <div class="lb-header">
+                  <span class="lb-icon">🔥</span>
+                  <h3>Top Mort Subite</h3>
+                </div>
+                <ul></ul>
+            </div>
         </div>
+      </div>
     </div>
 
-    <div class="game-row">
-        <div class="game-card">
-            <h2>Mort Subite ⚡</h2>
-            <p>Réponds jusqu'à te tromper. Le stress commence.</p>
-            <button class="btn secondary" onclick="startSuddenDeath()">Jouer ⚡</button>
-        </div>
-
-        <div class="leaderboard-mini" id="lb-sudden">
-            <h3>Top Mort Subite 🔥</h3>
-            <ul></ul>
-        </div>
-    </div>
-    </div>
-
-    <!-- ÉCRAN QUIZ -->
     <div id="screen-quiz" class="screen">
         <div class="quiz-container">
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
 
             <div class="meta">
-                <span id="question-counter"></span>
-                <span id="score-display"></span>
+                <span id="question-counter" class="counter-badge"></span>
+                <span id="score-display" class="score-badge"></span>
             </div>
 
             <div id="question-text" class="question-text"></div>
 
             <div id="choices" class="choices"></div>
 
-            <button id="btn-next" class="btn next">Question suivante ▶</button>
+            <button id="btn-next" class="btn next glow-btn">
+              <span>Question suivante</span>
+              <svg class="btn-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
         </div>
     </div>
 
-    <!-- ÉCRAN FIN -->
-    <section id="screen-end" class="screen card big">
-      <h2>Test terminé 🎉</h2>
+    <section id="screen-end" class="screen">
+      <div class="end-container">
+        <div class="end-icon">🎉</div>
+        <h2 class="end-title">Quiz Terminé !</h2>
 
-      <p id="qi-foot-level" class="qi-foot"></p>
-      <p class="score-final">Ton QI Foot : <strong id="final-score"></strong></p>
+        <div class="score-circle">
+          <svg viewBox="0 0 100 100">
+            <circle class="score-bg" cx="50" cy="50" r="45"/>
+            <circle class="score-progress" cx="50" cy="50" r="45" id="score-circle"/>
+          </svg>
+          <div class="score-value">
+            <span id="final-score">0</span>
+            <span class="score-label">points</span>
+          </div>
+        </div>
 
-      <div class="save-box">
-        <label for="player-name">Entre ton pseudo pour enregistrer ton score :</label>
-        <input id="player-name" type="text" placeholder="Ex : titou10" />
-        <button id="btn-save-score" class="btn primary">Valider mon score</button>
-        <p id="save-status" class="status"></p>
+        <p id="qi-foot-level" class="qi-foot-badge"></p>
+
+        <div class="save-box">
+          <label for="player-name">Entre ton pseudo pour le classement :</label>
+          <div class="input-group">
+            <input id="player-name" type="text" placeholder="Ton pseudo..." maxlength="20" />
+            <button id="btn-save-score" class="btn primary">
+              <span>Enregistrer</span>
+            </button>
+          </div>
+          <p id="save-status" class="status"></p>
+        </div>
+
+        <button class="btn secondary" onclick="location.reload()">
+          <span>Rejouer</span>
+        </button>
       </div>
-
     </section>
 
   </div>

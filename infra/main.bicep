@@ -4,9 +4,6 @@ param projectName string = 'cloudquizfoot2'
 @description('Emplacement Azure')
 param location string = 'uksouth'
 
-//
-// Storage Account (nécessaire pour Functions + Table Storage)
-//
 resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   name: '${projectName}stor'
   location: location
@@ -16,9 +13,6 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   }
 }
 
-//
-// Table Storage – Questions + Scores
-//
 resource questionsTable 'Microsoft.Storage/storageAccounts/tableServices/tables@2022-09-01' = {
   name: '${storageAccount.name}/default/questions'
 }
@@ -27,9 +21,6 @@ resource scoresTable 'Microsoft.Storage/storageAccounts/tableServices/tables@202
   name: '${storageAccount.name}/default/scores'
 }
 
-//
-// App Service Plan (Frontend)
-//
 resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: '${projectName}-plan'
   location: location
@@ -39,9 +30,6 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   }
 }
 
-//
-// App Service (Frontend)
-//
 resource webApp 'Microsoft.Web/sites@2022-03-01' = {
   name: '${projectName}-frontend'
   location: location
@@ -51,9 +39,6 @@ resource webApp 'Microsoft.Web/sites@2022-03-01' = {
   }
 }
 
-//
-// Plan pour Azure Functions – Consumption (Y1)
-//
 resource functionPlan 'Microsoft.Web/serverfarms@2022-03-01' = {
   name: '${projectName}-funcplan'
   location: location
@@ -62,13 +47,10 @@ resource functionPlan 'Microsoft.Web/serverfarms@2022-03-01' = {
     tier: 'Dynamic'
   }
   properties: {
-    reserved: true // Linux
+    reserved: true
   }
 }
 
-//
-// Function App (Backend)
-//
 resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
   name: '${projectName}-functions'
   location: location
