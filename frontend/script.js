@@ -1,7 +1,5 @@
-// 👉 BACKEND AZURE
 const API_BASE_URL = "https://cloudquizfoot2-functions.azurewebsites.net/api";
 
-// --- VARIABLES QUIZ QI FOOT ---
 let currentDifficulty = 3;
 let score = 0;
 let questionNumber = 1;
@@ -9,14 +7,11 @@ let totalQuestions = 10;
 let usedQuestions = [];
 let qiFootGlobal = 0;
 
-// --- VARIABLES QUIZ SUDDEN DEATH ---
 let suddenScore = 0;
-let suddenDifficulty = 1; // tu peux choisir la diff de départ
+let suddenDifficulty = 1;
 let suddenUsedQuestions = [];
 let suddenAlive = true;
 
-
-// --- REFERENCES DOM ---
 const screenQuiz = document.getElementById("screen-quiz");
 const screenEnd = document.getElementById("screen-end");
 
@@ -30,7 +25,6 @@ const finalScore = document.getElementById("final-score");
 const playerNameInput = document.getElementById("player-name");
 const saveStatus = document.getElementById("save-status");
 
-// 🟩————————————— FONCTIONS D’AFFICHAGE —————————————
 function showScreen(activeId) {
   const screens = [screenQuiz, screenEnd];
   screens.forEach((s) => s && s.classList.remove("active"));
@@ -38,8 +32,6 @@ function showScreen(activeId) {
   const screen = document.getElementById(activeId);
   if (screen) screen.classList.add("active");
 }
-
-// 🟩————————————— DEMARRAGE DU MODE QI FOOT —————————————
 
 function startQiFoot() {
     document.getElementById("home-screen").classList.add("hidden");
@@ -53,8 +45,6 @@ function startQiFoot() {
     loadQuestion();
 }
 
-
-// 📥 Charger une question
 async function loadQuestion() {
   try {
     const usedParam = usedQuestions.join(",");
@@ -72,7 +62,6 @@ async function loadQuestion() {
   }
 }
 
-// 🎨 Affiche une question
 function renderQuestion(question) {
   btnNext.disabled = true;
   choicesContainer.innerHTML = "";
@@ -89,7 +78,6 @@ function renderQuestion(question) {
     { text: question.choice3, correct: question.choice3 === question.answer },
   ];
 
-  // Mélange
   for (let i = choices.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [choices[i], choices[j]] = [choices[j], choices[i]];
@@ -105,7 +93,6 @@ function renderQuestion(question) {
   });
 }
 
-// ✔ Gère la réponse
 function handleAnswer(button, q, isCorrect) {
   const allButtons = document.querySelectorAll(".choice-btn");
   allButtons.forEach((b) => (b.disabled = true));
@@ -137,14 +124,12 @@ function handleAnswer(button, q, isCorrect) {
   btnNext.disabled = false;
 }
 
-// ▶ Question suivante
 async function nextQuestion() {
   questionNumber++;
   if (questionNumber > totalQuestions) endQuiz();
   else loadQuestion();
 }
 
-// 🟡 Fin du QI Foot
 function endQuiz() {
   qiFootGlobal = Math.round(score * 1.7);
 
@@ -175,7 +160,6 @@ function endQuiz() {
   showScreen("screen-end");
 }
 
-// 🟩————————————— ENREGISTREMENT SCORE —————————————
 async function saveScore() {
   const name = playerNameInput.value.trim();
   const modePlayed = suddenAlive ? "qifoot" : "sudden";
@@ -201,12 +185,9 @@ async function saveScore() {
     saveStatus.textContent = "Score enregistré ✔";
     saveStatus.className = "status ok";
 
-    // ⬇⬇⬇ NOUVEAU : retour au home + reload classements
     setTimeout(() => {
       document.getElementById("screen-end").classList.remove("active");
       document.getElementById("home-screen").classList.remove("hidden");
-
-      // recharge mini-leaderboards
       loadMiniLeaderboards();
     }, 800);
 
@@ -216,8 +197,6 @@ async function saveScore() {
   }
 }
 
-
-// 🟦————————————— MINI LEADERBOARDS —————————————
 async function loadMiniLeaderboards() {
   loadMini("qifoot", "#lb-qifoot ul");
   loadMini("sudden", "#lb-sudden ul");
@@ -244,19 +223,16 @@ async function loadMini(mode, selector) {
   }
 }
 
-// 🟩————————————— INIT + LISTENERS —————————————
 document.addEventListener("DOMContentLoaded", () => {
   loadMiniLeaderboards();
 
   btnNext.addEventListener("click", nextQuestion);
   document.getElementById("btn-save-score").addEventListener("click", saveScore);
 
-  // Boutons modes dans ton HTML :
   window.startQiFoot = startQiFoot;
   window.startSuddenDeath = startSuddenDeath;
 });
 
-// 🟩————————————— DEMARRAGE DU MODE SUDDEN DEATH —————————————
 function startSuddenDeath() {
     suddenScore = 0;
     suddenAlive = true;
@@ -289,7 +265,7 @@ async function loadSuddenQuestion() {
 }
 
 function renderSuddenQuestion(question) {
-    btnNext.style.display = "none"; // pas de bouton 'suivant' ici
+    btnNext.style.display = "none";
     choicesContainer.innerHTML = "";
 
     questionCounter.textContent = `Mort Subite • Score : ${suddenScore}`;

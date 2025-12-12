@@ -2,7 +2,6 @@ import os
 import json
 from azure.data.tables import TableServiceClient
 
-# --- Trouver automatiquement local.settings.json ---
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SETTINGS_PATH = os.path.join(BASE_DIR, "local.settings.json")
 
@@ -21,7 +20,6 @@ except KeyError:
 
 print("🔗 Connexion au storage OK")
 
-# --- Chargement du fichier questions.json ---
 QUESTIONS_PATH = os.path.join(os.path.dirname(__file__), "questions.json")
 
 if not os.path.exists(QUESTIONS_PATH):
@@ -32,11 +30,9 @@ with open(QUESTIONS_PATH, "r", encoding="utf8") as f:
 
 print(f"📄 {len(questions)} questions chargées.")
 
-# --- Connexion Table Storage ---
 service = TableServiceClient.from_connection_string(CONNECTION_STRING)
 table = service.get_table_client("questions")
 
-# --- Création des entités ---
 print("📥 Import en cours...")
 
 for q in questions:
