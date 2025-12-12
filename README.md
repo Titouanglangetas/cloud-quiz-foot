@@ -85,7 +85,7 @@ Une fenêtre de navigateur s'ouvrira pour vous authentifier.
 az group create --name CloudQuizFootResourceGroup --location uksouth
 ```
 
-> ⚠️ Choisissez une région autorisée par votre abonnement. Régions courantes : `uksouth`, `westeurope`, `francecentral`
+> ⚠️ Choisissez une région autorisée par votre abonnement ou des erreurs apparaîtront à l'étape suivante. Régions courantes : `uksouth`, `westeurope`, `francecentral`
 
 ---
 
