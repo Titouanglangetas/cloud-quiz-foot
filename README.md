@@ -1,19 +1,18 @@
 # ⚽ Cloud Quiz Foot  
 
 Cloud Quiz Foot est une application web cloud-native permettant de jouer à un quiz de football généré dynamiquement.  
-Le projet utilise Azure (App Service, Functions, Storage/CosmosDB), de l’Infrastructure as Code et un pipeline CI/CD GitHub Actions pour assurer un déploiement automatisé.
+Le projet utilise Azure (App Service, Functions, Table Storage), de l'Infrastructure as Code (Bicep) et un déploiement manuel via Azure CLI.
 
 ---
 
 ## 📌 1. Objectif du projet  
-Cloud Quiz Foot a pour objectif de démontrer la mise en place d’une architecture cloud moderne et scalable à travers une application simple et ludique.  
+Cloud Quiz Foot a pour objectif de démontrer la mise en place d'une architecture cloud moderne et scalable à travers une application simple et ludique.  
 Le projet illustre :
 
-- Le déploiement d’une application web sur Azure  
-- La création d’un backend serverless via Azure Functions  
-- L’utilisation d’un stockage cloud (Table Storage ou Cosmos DB)  
-- Le déploiement automatisé via GitHub Actions  
-- La gestion complète de l’infrastructure via IaC (Bicep/Terraform)  
+- Le déploiement d'une application web sur Azure  
+- La création d'un backend serverless via Azure Functions  
+- L'utilisation d'un stockage cloud (Table Storage)  
+- La gestion complète de l'infrastructure via IaC (Bicep)  
 - Une séparation claire frontend / backend / infra
 
 ---
@@ -21,140 +20,319 @@ Le projet illustre :
 ## 📂 2. Architecture du projet
 
 ### 🧱 Structure générale
+```
 cloud-quiz-foot/
-│
-├── frontend/ → Interface web (HTML/CSS/JS)
-├── backend/ → Azure Functions (API serverless)
-├── infra/ → Infrastructure as Code (Bicep ou Terraform)
-├── data/ → Données statiques (questions de quiz)
-└── .github/workflows → Pipelines CI/CD GitHub Actions
-
-
+├── frontend/           → Interface web (HTML/CSS/JS)
+├── Backend/            → Azure Functions (API serverless Python)
+│   ├── generatequiz/   → Génère un quiz aléatoire
+│   ├── nextquestion/   → Récupère la question suivante
+│   ├── submitresult/   → Enregistre un score
+│   ├── getleaderboard/ → Récupère le classement
+│   └── scripts/        → Script d'import des questions
+├── infra/              → Infrastructure as Code (Bicep)
+└── README.md
+```
 
 ### ☁️ Composants Azure utilisés
 
 | Service Azure | Rôle |
 |---------------|------|
 | **App Service** | Hébergement du frontend |
-| **Azure Functions** | Génération du quiz, scoring, leaderboard |
-| **Storage / Cosmos DB** | Stockage des questions et scores |
-| **App Service Plan** | Plan d’hébergement |
-| **GitHub Actions** | Déploiement automatisé |
-| **Bicep / Terraform** | Définition de l’infrastructure |
+| **Azure Functions** | API serverless (Python) |
+| **Storage Account** | Stockage des questions et scores (Table Storage) |
+| **App Service Plan (F1)** | Plan gratuit pour le frontend |
+| **Function Plan (Y1)** | Plan Consumption pour les Functions |
 
 ---
 
-## 🧠 3. Fonctionnalités
+## 🚀 3. Déploiement complet from scratch
 
-### ✔ Génération aléatoire d’un quiz  
-10 questions tirées depuis un dataset JSON ou une base Azure.
+### Prérequis
 
-### ✔ Réponse en direct dans l’interface  
-Interface web simple et rapide (HTML/CSS/JS).
-
-### ✔ Calcul du score  
-Traitement via Azure Function `submitResult`.
-
-### ✔ Classement global  
-Stockage des scores → affichage du top 10.
-
-### ✔ Architecture scalable  
-Grâce à Azure Functions + App Service.
-
-### ✔ Déploiement entièrement automatisé  
-GitHub Actions déploie :
-- le frontend  
-- le backend  
-- l’infrastructure (IaC)
+1. **Compte Azure** avec un abonnement actif
+2. **Azure CLI** installé : https://aka.ms/installazurecliwindows
+3. **Azure Functions Core Tools** :
+   ```bash
+   npm install -g azure-functions-core-tools@4 --unsafe-perm true
+   ```
+4. **Python 3.11** installé
+5. **Git** installé
 
 ---
 
-## ⚙️ 4. Backend : Azure Functions  
+### Étape 1 : Cloner le projet
 
-Le backend contient trois fonctions principales :
-
-| Function | Description |
-|----------|-------------|
-| `generateQuiz` | Renvoie une liste de questions aléatoires |
-| `submitResult` | Enregistre un score dans la base |
-| `getLeaderboard` | Renvoie le classement des meilleurs joueurs |
-
-Exemple d’endpoint :  
-GET /api/generateQuiz
-POST /api/submitResult
-GET /api/getLeaderboard
-
+```bash
+git clone https://github.com/votre-username/cloud-quiz-foot.git
+cd cloud-quiz-foot
+```
 
 ---
 
-## 🖥️ 5. Frontend : App Service  
-Technologies utilisées :
-- HTML  
-- CSS  
-- JavaScript  
+### Étape 2 : Se connecter à Azure
 
-Le frontend communique avec les endpoints Azure Functions via fetch API.
+```bash
+az login
+```
 
----
-
-## 🧰 6. Infrastructure as Code (IaC)  
-L’infrastructure est définie dans le dossier **infra/** via :
-
-- **Bicep** (option recommandée)  
-ou  
-- **Terraform**
-
-Ressources créées automatiquement :
-- Storage Account  
-- Function App  
-- App Service + App Service Plan  
-- Base (Table Storage ou CosmosDB)  
-- Identités managées  
-- Paramètres d’environnement
+Une fenêtre de navigateur s'ouvrira pour vous authentifier.
 
 ---
 
-## 🔄 7. CI/CD – GitHub Actions  
+### Étape 3 : Créer le Resource Group
 
-Trois pipelines sont fournis :
+```bash
+az group create --name CloudQuizFootResourceGroup --location uksouth
+```
 
-| Workflow | Rôle |
-|----------|------|
-| `deploy-infra.yml` | Déploiement IaC |
-| `deploy-backend.yml` | Build & déploiement Azure Functions |
-| `deploy-frontend.yml` | Build & déploiement frontend |
-
-Déclencheurs typiques :
-- `push` sur `main`  
-- `workflow_dispatch` (manuel)
+> ⚠️ Choisissez une région autorisée par votre abonnement. Régions courantes : `uksouth`, `westeurope`, `francecentral`
 
 ---
 
-## 🗃️ 8. Données  
+### Étape 4 : Déployer l'infrastructure avec Bicep
 
-Les questions sont stockées dans : data/questions.json
+```bash
+az deployment group create --resource-group CloudQuizFootResourceGroup --template-file infra/main.bicep
+```
 
-Format exemple :
+Cette commande crée automatiquement :
+- ✅ Storage Account avec Table Storage
+- ✅ Tables `questions` et `scores`
+- ✅ App Service Plan (frontend)
+- ✅ App Service (frontend)
+- ✅ Function Plan (backend)
+- ✅ Function App (backend Linux Python)
 
+---
+
+### Étape 5 : Récupérer la connection string du Storage
+
+```bash
+az storage account show-connection-string --name cloudquizfoot2stor --resource-group CloudQuizFootResourceGroup --query connectionString -o tsv
+```
+
+Copiez cette valeur et mettez-la dans `Backend/local.settings.json` :
+
+```json
 {
-  "question": "Qui a gagné la Coupe du Monde 2018 ?",
-  "answers": ["France", "Croatie", "Brésil", "Belgique"],
-  "correct": "France"
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsStorage": "<VOTRE_CONNECTION_STRING>",
+    "TABLE_STORAGE_CONNECTION_STRING": "<VOTRE_CONNECTION_STRING>"
+  }
 }
+```
 
 ---
-## 🚀 9. Installation locale
-1) Cloner le repo : git clone https://github.com/username/cloud-quiz-foot.git
-2) Installer Azure Functions Tools : npm install -g azure-functions-core-tools@4
-3) Lancer le backend localement :cd backend
-                                 func start
 
-4) Ouvrir le frontend dans un navigateur: frontend/index.html
+### Étape 6 : Importer les questions dans Table Storage
+
+```bash
+cd Backend/scripts
+pip install azure-data-tables
+python create_questions.py
+```
+
+Vous devriez voir :
+```
+🔎 Chargement de : ...\local.settings.json
+🔗 Connexion au storage OK
+📄 150 questions chargées.
+📥 Import en cours...
+✅ Import terminé !
+```
 
 ---
+
+### Étape 7 : Déployer le Backend (Azure Functions)
+
+```bash
+cd Backend
+func azure functionapp publish cloudquizfoot2-functions --build local
+```
+
+Après déploiement, vous verrez les URLs :
+```
+Functions in cloudquizfoot2-functions:
+    generatequiz - https://cloudquizfoot2-functions.azurewebsites.net/api/generatequiz
+    getleaderboard - https://cloudquizfoot2-functions.azurewebsites.net/api/getleaderboard
+    nextquestion - https://cloudquizfoot2-functions.azurewebsites.net/api/nextquestion
+    submitresult - https://cloudquizfoot2-functions.azurewebsites.net/api/submitresult
+```
+
+---
+
+### Étape 8 : Configurer l'URL de l'API dans le Frontend
+
+Modifiez `frontend/script.js` (ligne 2) :
+
+```javascript
+const API_BASE_URL = "https://cloudquizfoot2-functions.azurewebsites.net/api";
+```
+
+Modifiez aussi `frontend/leaderboard.js` (ligne 1) :
+
+```javascript
+const API = "https://cloudquizfoot2-functions.azurewebsites.net/api";
+```
+
+---
+
+### Étape 9 : Déployer le Frontend
+
+**Windows PowerShell :**
+```powershell
+Compress-Archive -Path frontend\* -DestinationPath frontend.zip -Force
+az webapp deploy --resource-group CloudQuizFootResourceGroup --name cloudquizfoot2-frontend --src-path frontend.zip --type zip
+```
+
+**Bash/Linux/Mac :**
+```bash
+zip -r frontend.zip frontend/*
+az webapp deploy --resource-group CloudQuizFootResourceGroup --name cloudquizfoot2-frontend --src-path frontend.zip --type zip
+```
+
+---
+
+### Étape 10 : Configurer CORS
+
+Autorisez le frontend à appeler le backend :
+
+```bash
+az functionapp cors add --name cloudquizfoot2-functions --resource-group CloudQuizFootResourceGroup --allowed-origins "https://cloudquizfoot2-frontend.azurewebsites.net"
+```
+
+---
+
+## ✅ 4. Tester l'application
+
+### URLs de production
+
+| Composant | URL |
+|-----------|-----|
+| **Frontend** | https://cloudquizfoot2-frontend.azurewebsites.net |
+| **API generatequiz** | https://cloudquizfoot2-functions.azurewebsites.net/api/generatequiz |
+| **API nextquestion** | https://cloudquizfoot2-functions.azurewebsites.net/api/nextquestion |
+| **API getleaderboard** | https://cloudquizfoot2-functions.azurewebsites.net/api/getleaderboard |
+| **API submitresult** | https://cloudquizfoot2-functions.azurewebsites.net/api/submitresult |
+
+---
+
+## 🧪 5. Développement local
+
+### Lancer le backend localement
+
+```bash
+cd Backend
+python -m venv .venv
+.venv\Scripts\Activate.ps1   # Windows
+# ou: source .venv/bin/activate   # Linux/Mac
+pip install -r requirements.txt
+func start
+```
+
+Le backend sera disponible sur `http://localhost:7071/api`
+
+### Tester le frontend localement
+
+Ouvrez `frontend/index.html` dans un navigateur, ou utilisez Live Server dans VS Code.
+
+> ⚠️ Pour le dev local, modifiez `API_BASE_URL` dans `script.js` :
+> ```javascript
+> const API_BASE_URL = "http://localhost:7071/api";
+> ```
+
+---
+
+## ⚙️ 6. Backend : Azure Functions (Python)
+
+| Function | Méthode | Description |
+|----------|---------|-------------|
+| `generatequiz` | GET | Renvoie 5 questions aléatoires |
+| `nextquestion` | GET | Renvoie une question selon la difficulté |
+| `submitresult` | POST | Enregistre un score dans la table `scores` |
+| `getleaderboard` | GET | Renvoie le top 10 des joueurs |
+
+### Paramètres de nextquestion
+
+```
+GET /api/nextquestion?difficulty=3&used=1,2,3
+```
+
+- `difficulty` : niveau de difficulté (1-10)
+- `used` : IDs des questions déjà posées (évite les doublons)
+
+---
+
+## 🧰 7. Infrastructure as Code (Bicep)
+
+Le fichier `infra/main.bicep` crée toutes les ressources Azure :
+
+```bicep
+// Paramètres
+param projectName string = 'cloudquizfoot2'
+param location string = 'uksouth'
+
+// Ressources créées :
+// - Storage Account + Table Storage (questions, scores)
+// - App Service Plan (F1 gratuit)
+// - App Service (frontend)
+// - Function Plan (Y1 Consumption)
+// - Function App (Python 3.11 Linux)
+```
+
+Pour redéployer l'infrastructure :
+```bash
+az deployment group create --resource-group CloudQuizFootResourceGroup --template-file infra/main.bicep
+```
+
+---
+
+## 🗑️ 8. Nettoyage des ressources
+
+Pour supprimer toutes les ressources Azure :
+
+```bash
+az group delete --name CloudQuizFootResourceGroup --yes --no-wait
+```
+
+---
+
+## 🗃️ 9. Format des données
+
+### Questions (Table Storage)
+
+```json
+{
+  "PartitionKey": "Q",
+  "RowKey": "1",
+  "difficulty": 1,
+  "question": "Quel pays a remporté la Coupe du Monde 2018 ?",
+  "choice1": "France",
+  "choice2": "Croatie",
+  "choice3": "Belgique",
+  "answer": "France"
+}
+```
+
+### Scores (Table Storage)
+
+```json
+{
+  "PartitionKey": "score",
+  "RowKey": "uuid",
+  "name": "Joueur1",
+  "score": 85,
+  "mode": "qifoot",
+  "timestamp": "2025-12-12T17:00:00Z"
+}
+```
+
+---
+
 ## 👥 10. Équipe
-Titouan Glangetas
-Arthur Fatus
-Quentin Petiteville
 
-
+- Titouan Glangetas
+- Arthur Fatus
+- Quentin Petiteville
