@@ -94,6 +94,7 @@ az group create --name CloudQuizFootRG --location uksouth
 ```bash
 az deployment group create --resource-group CloudQuizFootRG --template-file infra/main.bicep
 ```
+> ⚠️ Vérifiez que la région choisie au préalable soit également paramétrée dans le fichier `main.bicep` (ligne 5).
 
 Cette commande crée automatiquement :
 - ✅ Storage Account avec Table Storage
@@ -111,7 +112,7 @@ Cette commande crée automatiquement :
 az storage account show-connection-string --name cloudquizfootprojstor --resource-group CloudQuizFootRG --query connectionString -o tsv
 ```
 
-Copiez cette valeur et mettez-la dans `Backend/local.settings.json` :
+Copiez cette valeur et mettez-la dans le fichier à l'adresse `Backend/local.settings.json` créé au préalable :
 
 ```json
 {
