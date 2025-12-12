@@ -112,7 +112,7 @@ Cette commande crée automatiquement :
 az storage account show-connection-string --name cloudquizfootprojstor --resource-group CloudQuizFootRG --query connectionString -o tsv
 ```
 
-Copiez cette valeur et mettez-la dans le fichier à l'adresse `Backend/local.settings.json` créé au préalable :
+Créez le fichier `local.settings.json` dans le dossier `Backend` et copiez la valeur obtenue dans la commande précédente dans `<VOTRE_CONNECTION_STRING>` :
 
 ```json
 {
