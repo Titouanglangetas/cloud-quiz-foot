@@ -154,7 +154,7 @@ func azure functionapp publish cloudquizfootproj-functions --build local
 
 Après déploiement, vous verrez les URLs :
 ```
-Functions in cloudquizfoot2-functions:
+Functions in cloudquizfootproj-functions:
     generatequiz - https://cloudquizfoot2-functions.azurewebsites.net/api/generatequiz
     getleaderboard - https://cloudquizfoot2-functions.azurewebsites.net/api/getleaderboard
     nextquestion - https://cloudquizfoot2-functions.azurewebsites.net/api/nextquestion
@@ -271,7 +271,7 @@ Le fichier `infra/main.bicep` crée toutes les ressources Azure :
 
 ```bicep
 // Paramètres
-param projectName string = 'cloudquizfoot2'
+param projectName string = 'cloudquizfootproj'
 param location string = 'uksouth'
 
 // Ressources créées :
